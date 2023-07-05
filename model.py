@@ -15,6 +15,7 @@ df=pd.read_csv('bodyfat.csv')
 
 print(df.head())
 df['Bmi']=703*df['Weight']/(df['Height']*df['Height'])
+df.drop(columns=['Weight','Height'])
 
 #split to independent and dependent variables
 X=df.drop(columns=['BodyFat'],axis=1)
