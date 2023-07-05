@@ -6,7 +6,7 @@ Created on Mon Jul  3 21:26:06 2023
 """
 
 import numpy as np
-from flask import Flask, request, jsonify,render_template
+from flask import Flask, request,render_template
 
 #create flask app
 app=Flask(__name__)
@@ -25,7 +25,7 @@ def predict():
     features=[np.array(float_features)]
     prediction=model.predict(features)
     
-    return render_template('index.html',prediction_text="Body Fat of Person is {}".format(prediction))
+    return render_template('index.html',prediction_text="Body Fat of the male is {}".format(prediction))
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(port=8000,debug=True)
